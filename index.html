@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Poster generator</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
     <script type="text/javascript" src="javascripts/processing.js"></script>
     <script src="javascripts/jquery-3.6.4.js" charset="utf-8"></script>
     <script src="javascripts/drag.js" charset="utf-8"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="javascripts/canvas.js"></script>
-
 
     <script>
       // <!-- плавный скролл -->
@@ -37,22 +35,49 @@
           let valofin = $('input[name="firstinput"]').val();
           $("#result").html(valofin);
         });
+        // смена фона фильтра
         $(".btnex").click(function () {
           let colorch = $(this).attr("data");
-          $("#result").css("background", colorch + ".jpg");
+          $("#result").css("background", colorch);
         });
       });
-      
-      // resizeable
-      $( function() {
-    $( "#resizable" ).resizable();
-  } );
-      // text slider resize
-  $('input').on('input', function() {
-  var v = $(this).val();
-  $("#result").css('font-size', v + 'em');
-});
 
+      // ресайз
+      $(function () {
+        $("#resizable").resizable();
+      });
+      // слайдер текста
+      $(document).ready(function () {
+        $(".slider").on("input", function () {
+          var v = $(this).val();
+          $("#result").css("font-size", v + "vw");
+        });
+      });
+      // клон результат
+      $(document).ready(function () {
+        $(".maindiv").clone().appendTo(".maindiv_clone");
+      });
+      // изменение цвета кнопок
+      $(document).ready(function () {
+        $(".color_yt").click(function () {
+          $("#result").css("color", "white");
+        });
+        $(".color_bl").click(function () {
+          $("#result").css("color", "black");
+        });
+        $(".color_yellow").click(function () {
+          $("#result").css("color", "#FFF000");
+        });
+        $(".color_blue").click(function () {
+          $("#result").css("color", "#0101C5");
+        });
+        $(".color_pink").click(function () {
+          $("#result").css("color", "#FF56FF");
+        });
+        $(".color_green").click(function () {
+          $("#result").css("color", "#19E672");
+        });
+      });
     </script>
 
     <style>
@@ -66,9 +91,9 @@
         color: white;
         text-align: center;
       }
-     
     </style>
   </head>
+
   <body>
     <div class="background_anim">
       <!-- анимация процессинг -->
@@ -108,7 +133,7 @@
           a_+=0.08;
         }
       </script>
-      <canvas id="sketch" ></canvas>
+      <canvas id="sketch"></canvas>
     </div>
     <div class="container">
       <div class="postergenerator1"></div>
@@ -121,46 +146,52 @@
         <img class="buttontext" src="images/NACHAT.svg" alt="" />
       </a>
     </div>
+
     <div id="scroll" class="container2">
       <div class="fon">
-        <div class="btnex" data="red">1</div>
+        <div class="btnex" data="#00E2D3">1</div>
         <div class="btnex" data="blue">2</div>
       </div>
       <div class="text">
-        <input type="range" min="1.2" max="2.6" step=".2" id="slider" />
-        <input type="text" value="TYPE ZDES..." name="firstinput"  />
-
+        <div class="color_container">
+          <div class="color_yt"></div>
+          <div class="color_bl"></div>
+          <div class="color_yellow"></div>
+          <div class="color_blue"></div>
+          <div class="color_pink"></div>
+          <div class="color_green"></div>
+        </div>
+        <input
+          class="slider"
+          type="range"
+          min="1"
+          max="30"
+          step=".2"
+          id="slider"
+        />
+        <input
+          class="typer"
+          type="text"
+          value="hi! make cool posters o(≧▽≦)o "
+          name="firstinput"
+        />
         <div id="btn4txt">TAP</div>
       </div>
       <div class="filter"></div>
-      <div class="maindiv" id="result">
-        <canvas id="canvas"></canvas>
-      </div>
+      <div class="maindiv" id="result"></div>
       <div class="predmet">
-        <img class="elem_1" src="images/SIMP.png" alt="" id="dragOne" >
-        <img class="elem_2" src="images/eye.png" alt="" id="dragTwo">
-        <img class="elem_3" src="images/flower.png" alt="" id="dragThree"> 
-        <img class="elem_4" src="images/milk.png" alt="" id="dragFour"> 
-        <img class="elem_5" src="images/pizza.png" alt="" id="dragFive">
-        <img class="elem_6" src="images/teddy.png" alt="" id="dragSix">
-        
+        <img class="elem_1" src="images/SIMP.png" alt="" id="dragOne" />
+        <img class="elem_2" src="images/eye.png" alt="" id="dragTwo" />
+        <img class="elem_3" src="images/flower.png" alt="" id="dragThree" />
+        <img class="elem_4" src="images/milk.png" alt="" id="dragFour" />
+        <img class="elem_5" src="images/pizza.png" alt="" id="dragFive" />
+        <img class="elem_6" src="images/teddy.png" alt="" id="dragSix" />
       </div>
       <div class="button2">
         <img class="buttontext2" src="images/GOTOVO.svg" alt="" />
-      </a>
       </div>
     </div>
 
-
-   
-    <script>
-      // клонирование
-      $(".button2").click(function () {
-        $(this).parent().after($(this).parent().html());
-      });
-    </script>
-
-
-    
+    <div class="maindiv_clone"></div>
   </body>
 </html>
