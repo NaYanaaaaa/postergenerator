@@ -1,0 +1,236 @@
+body {
+  background-color: black;
+  font-family: 'terminal_grotesque';
+  font-weight: normal;
+  font-style: normal;
+}
+/* главный экран */
+.background_anim {
+  width: 100vw;
+  height: 56vw;
+  overflow: hidden;
+}
+.container {
+  width: 100vw;
+  height: 56vw;
+  margin-top: 0px;
+}
+.postergenerator1 {
+  width: 61vw;
+  height: 56vw;
+  position: relative;
+  background: url("../images/postergenerator1.svg");
+  background-size: 100%;
+  margin-top: -56vw;
+}
+.postergenerator2 {
+  width: 39vw;
+  height: 35vw;
+  position: relative;
+  background: url("../images/postergenerator2.svg");
+  background-size: 100%;
+  margin-top: -56vw;
+  margin-left: 60.7vw;
+}.postergenerator3 {
+  width: 25vw;
+  height: 21vw;
+  position: relative;
+  background: url("../images/postergenerator3.svg");
+  background-size: 100%;
+  margin-top: 0vw;
+  margin-left: 75vw;
+}.postergenerator4 {
+  width: 14vw;
+  height: 12.5vw;
+  position: relative;
+  background: url("../images/postergenerator4.svg");
+  background-size: 100%;
+  margin-top: -12.5vw;
+  margin-left: 61vw;
+}.postergenerator5 {
+  width: 9vw;
+  height: 8.5vw;
+  position: relative;
+  background: url("../images/postergenerator5.svg");
+  background-size: 100%;
+  margin-top: -21vw;
+  margin-left: 61vw;
+}.postergenerator6 {
+  width: 4.8vw;
+  height: 8.5vw;
+  position: relative;
+  background: url("../images/postergenerator6.svg");
+  background-size: 100%;
+  margin-top: -8.4vw;
+  margin-left: 70vw;
+}
+
+@property --c {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #000AFF;
+}
+
+.button {
+  --c:#000AFF; 
+  cursor:pointer;
+  width:17.5vw;
+  height:5.5vw;
+  left: 40%;
+  position: relative;
+  transition:--c 0.5s;
+  background: radial-gradient(var(--c), #19E672);
+  display:block
+
+}
+.button:hover {
+  --c:#FFFF0F;
+}
+.buttontext {
+  width: 7.8vw;
+  height: 1.7vw;
+  margin-top: 1.2vw;
+  position: relative;
+  left: 28%;
+  top: 10%;
+}
+.button2 {
+  --c:#4807FF; 
+  cursor:pointer;
+  width:17.5vw;
+  height:5.21vw;
+  left: -17.5%;
+  top: 90.9%;
+  position: relative;
+  transition:--c 0.5s;
+  background: radial-gradient(var(--c), #FFB23E);
+  display:block
+
+}
+.button2:hover {
+  --c:#59FE9B;
+}
+.buttontext2 {
+  width: 7.8vw;
+  height: 1.7vw;
+  margin-top: 1.2vw;
+  position: relative;
+  left: 28%;
+  top: 10%;
+}
+
+/* генератор */
+.container2 {
+  width: 100vw;
+  height: 57vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0px;
+}
+.fon {
+  width: 29vw;
+  height: 21vw;
+  background: url("../images/fon.svg");
+  background-size: 100%;
+
+}
+
+.text {
+  width: 29vw;
+  height: 19vw;
+  background: url("../images/text.svg");
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.filter {
+  width: 29vw;
+  height: 17vw;
+  background: url("../images/filter.svg");
+  background-size: 104%;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.predmet {
+  width: 29vw;
+  height: 51.8vw;
+  background: url("../images/predmet.svg");
+  background-size: 101.5%;
+  background-repeat: no-repeat;
+
+}
+
+.maindiv {
+  width: 42vw;
+  height: 57vw;
+  background: url("../images/holst.svg");
+  background-size: 100%;
+  font-size: 12vw;
+  /* font-family: 'terminal_grotesque'; */
+  font-family: 'kaeru_kaeruregular';
+  font-weight: normal;
+  font-style: normal;
+  color: #4807FF;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+.elem_1 {
+  width: 10vw;
+  height: 10vw;
+}
+.elem_2 {
+  width: 10vw;
+  height: 10vw;
+}
+.elem_3 {
+  width: 10vw;
+  height: 10vw;
+}
+.elem_4 {
+  width: 10vw;
+  height: 10vw;
+}
+.elem_5 {
+  width: 10vw;
+  height: 10vw;
+}
+.elem_6 {
+  width: 10vw;
+  height: 10vw;
+}
+#btn4txt {
+  --c:#EE99C0; 
+  cursor:pointer;
+  width: 18vw;
+  height: 5.5vw;
+  color: rgb(0, 0, 0);
+  transition:--c 0.5s;
+  background: radial-gradient(var(--c), #00E2D3);
+  text-align: center;
+  line-height: 5.2vw;
+  font-size: 2.5vw;
+  margin: 2vw;
+}
+#btn4txt:hover {
+  --c:#59FE9B;
+}
+input {
+  background: linear-gradient( #FF26FF, #FAF09B);
+  border: none;
+  height: 3vw;
+  width: 23vw;
+  padding-left: 1vw;
+  font-size: 2vw;
+  font-family: 'terminal_grotesque';
+}
+#result {
+
+}
+#canvas {
+  border: black 1px;
+}

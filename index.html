@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poster generator</title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script type="text/javascript" src="javascripts/processing.js"></script>
+    <script src="javascripts/jquery-3.6.4.js" charset="utf-8"></script>
+    <script src="javascripts/drag.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="javascripts/canvas.js"></script>
+
+
+    <script>
+      // <!-- плавный скролл -->
+      $(function () {
+        $(".button").each(function () {
+          $(this).on("click", function (e) {
+            e.preventDefault();
+            var scrollTo = $(this).attr("href");
+            $("html,body").animate(
+              {
+                scrollTop: $(scrollTo).offset().top,
+              },
+              800
+            );
+          });
+        });
+      });
+
+      // <!-- скрипт текст -->
+      $(document).ready(function () {
+        $("#btn4txt").click(function () {
+          let valofin = $('input[name="firstinput"]').val();
+          $("#result").html(valofin);
+        });
+        $(".btnex").click(function () {
+          let colorch = $(this).attr("data");
+          $("#result").css("background", colorch + ".jpg");
+        });
+      });
+      
+      // resizeable
+      $( function() {
+    $( "#resizable" ).resizable();
+  } );
+      // text slider resize
+  $('input').on('input', function() {
+  var v = $(this).val();
+  $("#result").css('font-size', v + 'em');
+});
+
+    </script>
+
+    <style>
+      .btnex {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin: 20px;
+        background: green;
+        color: white;
+        text-align: center;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div class="background_anim">
+      <!-- анимация процессинг -->
+      <script type="text/processing">
+        float x, y;
+        float xStep = 100;
+        float yStep = 50;
+        float a, a_;
+        int num;
+
+        void setup() {
+          size (1920, 1082);
+          num = int((width/xStep)*(height/yStep));
+        }
+
+        void draw() {
+          background(#000000);
+          strokeCap(CORNER);
+          strokeWeight(xStep);
+
+          int n=0;
+          while (n<num) {
+            stroke(255-255*cos(radians(a)),1*cos(radians(a)),255-197*sin(radians(a)),255-197*sin(radians(a)));
+            line(x ,y ,x , y+yStep);
+            x+=xStep;
+            if (x>width) {
+              x=xStep/2;
+              y+=yStep;
+            }
+            if (y>=height) {
+              y=0;
+              a=0;
+            }
+            n++;
+            a+=a_;
+          }
+          a_+=0.08;
+        }
+      </script>
+      <canvas id="sketch" ></canvas>
+    </div>
+    <div class="container">
+      <div class="postergenerator1"></div>
+      <div class="postergenerator2"></div>
+      <div class="postergenerator3"></div>
+      <div class="postergenerator4"></div>
+      <div class="postergenerator5"></div>
+      <div class="postergenerator6"></div>
+      <a class="button" href="#scroll">
+        <img class="buttontext" src="images/NACHAT.svg" alt="" />
+      </a>
+    </div>
+    <div id="scroll" class="container2">
+      <div class="fon">
+        <div class="btnex" data="red">1</div>
+        <div class="btnex" data="blue">2</div>
+      </div>
+      <div class="text">
+        <input type="range" min="1.2" max="2.6" step=".2" id="slider" />
+        <input type="text" value="TYPE ZDES..." name="firstinput"  />
+
+        <div id="btn4txt">TAP</div>
+      </div>
+      <div class="filter"></div>
+      <div class="maindiv" id="result">
+        <canvas id="canvas"></canvas>
+      </div>
+      <div class="predmet">
+        <img class="elem_1" src="images/SIMP.png" alt="" id="dragOne" >
+        <img class="elem_2" src="images/eye.png" alt="" id="dragTwo">
+        <img class="elem_3" src="images/flower.png" alt="" id="dragThree"> 
+        <img class="elem_4" src="images/milk.png" alt="" id="dragFour"> 
+        <img class="elem_5" src="images/pizza.png" alt="" id="dragFive">
+        <img class="elem_6" src="images/teddy.png" alt="" id="dragSix">
+        
+      </div>
+      <div class="button2">
+        <img class="buttontext2" src="images/GOTOVO.svg" alt="" />
+      </a>
+      </div>
+    </div>
+
+
+   
+    <script>
+      // клонирование
+      $(".button2").click(function () {
+        $(this).parent().after($(this).parent().html());
+      });
+    </script>
+
+
+    
+  </body>
+</html>
