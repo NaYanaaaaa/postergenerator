@@ -29,23 +29,66 @@
         });
       });
 
+      $(function () {
+        $(".button2").each(function () {
+          $(this).on("click", function (e) {
+            e.preventDefault();
+            var scrollTo = $(this).attr("href");
+            $("html,body").animate(
+              {
+                scrollTop: $(scrollTo).offset().top,
+              },
+              800
+            );
+          });
+        });
+      });
+
       // <!-- скрипт текст -->
       $(document).ready(function () {
         $("#btn4txt").click(function () {
           let valofin = $('input[name="firstinput"]').val();
           $("#result").html(valofin);
         });
-        // смена фона фильтра
-        $(".btnex").click(function () {
-          let colorch = $(this).attr("data");
-          $("#result").css("background", colorch);
+        // смена фона
+        $(".btn_fon1").click(function () {
+          $("#result").toggleClass("fonclick1");
+        });
+        $(".btn_fon2").click(function () {
+          $("#result").toggleClass("fonclick2");
+        });
+        $(".btn_fon3").click(function () {
+          $("#result").toggleClass("fonclick3");
+        });
+        $(".btn_fon4").click(function () {
+          $("#result").toggleClass("fonclick4");
+        });
+        $(".btn_fon5").click(function () {
+          $("#result").toggleClass("fonclick5");
+        });
+        $(".btn_fon6").click(function () {
+          $("#result").toggleClass("fonclick6");
+        });
+        $(".btn_fon7").click(function () {
+          $("#result").toggleClass("fonclick7");
+        });
+        $(".btn_fon8").click(function () {
+          $("#result").toggleClass("fonclick8");
+        });
+        $(".btn_fon9").click(function () {
+          $("#result").toggleClass("fonclick9");
+        });
+        $(".btn_fon10").click(function () {
+          $("#result").toggleClass("fonclick10");
+        });
+        $(".btn_fon11").click(function () {
+          $("#result").toggleClass("fonclick11");
+        });
+        $(".btn_fon12").click(function () {
+          $("#result").toggleClass("fonclick12");
         });
       });
 
-      // ресайз
-      $(function () {
-        $("#resizable").resizable();
-      });
       // слайдер текста
       $(document).ready(function () {
         $(".slider").on("input", function () {
@@ -55,8 +98,12 @@
       });
       // клон результат
       $(document).ready(function () {
-        $(".maindiv").clone().appendTo(".maindiv_clone");
+        $(".button2").click(function () {
+          $(".container2").clone().appendTo(".maindiv_clone");
+          $(".fon, .text, .filter, .button2, .predmet").addClass("boole");
+        });
       });
+
       // изменение цвета кнопок
       $(document).ready(function () {
         $(".color_yt").click(function () {
@@ -78,20 +125,64 @@
           $("#result").css("color", "#19E672");
         });
       });
+      // изменение фильтра
+      $(document).ready(function () {
+        $(".fbtn_1").click(function () {
+          $("#result").toggleClass("f1_navy");
+        });
+        $(".fbtn_2").click(function () {
+          $("#result").toggleClass("f2_yellow");
+        });
+        $(".fbtn_3").click(function () {
+          $("#result").toggleClass("f3_pink");
+        });
+        $(".fbtn_4").click(function () {
+          $("#result").toggleClass("f4_green");
+        });
+        $(".fbtn_5").click(function () {
+          $("#result").toggleClass("f5_blue");
+        });
+        $(".fbtn_6").click(function () {
+          $("#result").toggleClass("f6_purple");
+        });
+        $(".fbtn_7").click(function () {
+          $("#result").toggleClass("f7_lightgreen");
+        });
+        $(".fbtn_8").click(function () {
+          $("#result").toggleClass("f8_red");
+        });
+      });
+      // изменение размера по клику
+      $(function () {
+        let count = 0;
+        $(
+          ".elem_1, .elem_2, .elem_3, .elem_4, .elem_5, .elem_6, .elem_7, .elem_8, .elem_9, .elem_10, .elem_11, .elem_12, .elem_13, .elem_14, .elem_15, .elem_16, .elem_17, .elem_18, .elem_19 "
+        ).click(function () {
+          count += 1;
+          if (count == 2) {
+            $(this).addClass("resize");
+          }
+          if (count == 3) {
+            $(this).addClass("resize2");
+          }
+        });
+      });
+      // перетаскивание
+      $(function () {
+        $(".cnst").draggable();
+      });
+      $(document).ready(function () {
+        $(".cnst").mouseup(function () {});
+      });
+      // попап
+      $(document).ready(function () {
+        $(".btn_print").click(function () {
+          if ($(".popup").hasClass("pop")) {
+            $(".popup").removeClass("pop");
+          }
+        });
+      });
     </script>
-
-    <style>
-      .btnex {
-        position: relative;
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        margin: 20px;
-        background: green;
-        color: white;
-        text-align: center;
-      }
-    </style>
   </head>
 
   <body>
@@ -105,7 +196,7 @@
         int num;
 
         void setup() {
-          size (1920, 1082);
+          size (1920, 1080);
           num = int((width/xStep)*(height/yStep));
         }
 
@@ -133,7 +224,7 @@
           a_+=0.08;
         }
       </script>
-      <canvas id="sketch"></canvas>
+      <canvas id="sketch" width="150" height="150"></canvas>
     </div>
     <div class="container">
       <div class="postergenerator1"></div>
@@ -142,15 +233,26 @@
       <div class="postergenerator4"></div>
       <div class="postergenerator5"></div>
       <div class="postergenerator6"></div>
-      <a class="button" href="#scroll">
-        <img class="buttontext" src="images/NACHAT.svg" alt="" />
-      </a>
+      <a class="button" href="#scroll">NACHAT</a>
     </div>
 
     <div id="scroll" class="container2">
       <div class="fon">
-        <div class="btnex" data="#00E2D3">1</div>
-        <div class="btnex" data="blue">2</div>
+        <div class="fon_container">
+          <div class="btnex btn_fon1"></div>
+          <div class="btnex btn_fon2"></div>
+          <div class="btnex btn_fon3"></div>
+          <div class="btnex btn_fon4"></div>
+          <div class="btnex btn_fon5"></div>
+          <div class="btnex btn_fon6"></div>
+          <div class="btnex btn_fon7"></div>
+          <div class="btnex btn_fon8"></div>
+          <div class="btnex btn_fon9"></div>
+          <div class="btnex btn_fon10"></div>
+          <div class="btnex btn_fon11"></div>
+          <div class="btnex btn_fon12"></div>
+          <div class="btnex btn_fon13"></div>
+        </div>
       </div>
       <div class="text">
         <div class="color_container">
@@ -177,21 +279,96 @@
         />
         <div id="btn4txt">TAP</div>
       </div>
-      <div class="filter"></div>
+      <div class="filter">
+        <div class="filter_all">
+          <div class="fbtn_1 filtersize"></div>
+          <div class="fbtn_2 filtersize"></div>
+          <div class="fbtn_3 filtersize"></div>
+          <div class="fbtn_4 filtersize"></div>
+          <div class="fbtn_5 filtersize"></div>
+          <div class="fbtn_6 filtersize"></div>
+          <div class="fbtn_7 filtersize"></div>
+          <div class="fbtn_8 filtersize"></div>
+        </div>
+      </div>
       <div class="maindiv" id="result"></div>
       <div class="predmet">
-        <img class="elem_1" src="images/SIMP.png" alt="" id="dragOne" />
-        <img class="elem_2" src="images/eye.png" alt="" id="dragTwo" />
-        <img class="elem_3" src="images/flower.png" alt="" id="dragThree" />
-        <img class="elem_4" src="images/milk.png" alt="" id="dragFour" />
-        <img class="elem_5" src="images/pizza.png" alt="" id="dragFive" />
-        <img class="elem_6" src="images/teddy.png" alt="" id="dragSix" />
+        <div class="constants">
+          <img class="elem_1 cnst" src="images/SIMP.png" alt="" id="dragOne" />
+          <img class="elem_2 cnst" src="images/eye.png" alt="" id="dragTwo" />
+          <img
+            class="elem_3 cnst"
+            src="images/flower.png"
+            alt=""
+            id="dragThree"
+          />
+          <img class="elem_4 cnst" src="images/milk.png" alt="" id="dragFour" />
+          <img
+            class="elem_5 cnst"
+            src="images/pizza.png"
+            alt=""
+            id="dragFive"
+          />
+          <img class="elem_6 cnst" src="images/teddy.png" alt="" id="dragSix" />
+          <img
+            class="elem_7 cnst"
+            src="images/bfly.png"
+            alt=""
+            id="dragSeven"
+          />
+          <img class="elem_8 cnst" src="images/ced.png" alt="" id="dragEight" />
+          <img
+            class="elem_9 cnst"
+            src="images/bottle.png"
+            alt=""
+            id="dragTen"
+          />
+          <img class="elem_10 cnst" src="images/cigs.png" alt="" id="drag11" />
+          <img class="elem_11 cnst" src="images/cow.png" alt="" id="drag12" />
+          <img
+            class="elem_12 cnst"
+            src="images/cupcake.png"
+            alt=""
+            id="drag13"
+          />
+          <img class="elem_13 cnst" src="images/graf1.png" alt="" id="drag14" />
+          <img class="elem_14 cnst" src="images/graf2.png" alt="" id="drag15" />
+          <img
+            class="elem_15 cnst"
+            src="images/guitar.png"
+            alt=""
+            id="drag16"
+          />
+          <img
+            class="elem_16 cnst"
+            src="images/octopus.png"
+            alt=""
+            id="drag17"
+          />
+          <img
+            class="elem_17 cnst"
+            src="images/planet.png"
+            alt=""
+            id="drag18"
+          />
+          <img
+            class="elem_18 cnst"
+            src="images/player.png"
+            alt=""
+            id="drag19"
+          />
+          <img class="elem_19 cnst" src="images/vhs.png" alt="" id="drag20" />
+        </div>
+        <div class="placed"></div>
       </div>
-      <div class="button2">
-        <img class="buttontext2" src="images/GOTOVO.svg" alt="" />
-      </div>
+      <a class="button2" href="#scroll2">GOTOVO</a>
     </div>
 
-    <div class="maindiv_clone"></div>
+    <div class="maindiv_clone" id="scroll2"></div>
+    <div class="popup pop">
+      GOTOVO! <br />
+      S VAS 9999 DOLLAR$$$
+    </div>
+    <div class="btn_print">PRINT?</div>
   </body>
 </html>
