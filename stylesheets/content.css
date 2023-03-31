@@ -358,7 +358,6 @@ input[type=range]::-webkit-slider-thumb {
 input[type=range]::-webkit-slider-runnable-track {
   width: 23vw;
   height: 1vw;
- 
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   background: linear-gradient( #00E2D3, #FAF09B, #00E2D3);
   border: none;
