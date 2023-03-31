@@ -199,6 +199,8 @@
     height: 32vw;
     background: url("../images/fon.svg");
     background-size: 100%;
+    top: -34px;
+    position: relative;
   
   }
   
@@ -207,6 +209,8 @@
     height: 32vw;
     background: url("../images/text.svg");
     background-size: 100%;
+    position: relative;
+    top: -33px;
   
   }
   .filter {
@@ -847,6 +851,7 @@
     width: 36vw;
     height: 60vw;
   }
+  
   
 
 }
