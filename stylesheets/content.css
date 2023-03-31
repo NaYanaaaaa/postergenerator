@@ -793,3 +793,19 @@ html {
 .pop {
   opacity: 0;
 }
+.resizeguitar {
+  width: 11vw;
+  height: 30vw;
+}
+.resizeguitar2 {
+  width: 22vw;
+  height: 60vw;
+}
+.resizemilk {
+  width: 18vw;
+  height: 30vw;
+}
+.resizemilk2 {
+  width: 36vw;
+  height: 60vw;
+}

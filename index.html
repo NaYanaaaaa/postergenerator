@@ -156,7 +156,7 @@
       $(function () {
         let count = 0;
         $(
-          ".elem_1, .elem_2, .elem_3, .elem_4, .elem_5, .elem_6, .elem_7, .elem_8, .elem_9, .elem_10, .elem_11, .elem_12, .elem_13, .elem_14, .elem_15, .elem_16, .elem_17, .elem_18, .elem_19 "
+          ".elem_1, .elem_2, .elem_3, .elem_5, .elem_6, .elem_7, .elem_8, .elem_9, .elem_10, .elem_11, .elem_12, .elem_13, .elem_14, .elem_16, .elem_17, .elem_18, .elem_19 "
         ).click(function () {
           count += 1;
           if (count == 2) {
@@ -164,6 +164,24 @@
           }
           if (count == 3) {
             $(this).addClass("resize2");
+          }
+        });
+        $(".elem_15 ").click(function () {
+          count += 1;
+          if (count == 2) {
+            $(this).addClass("resizeguitar");
+          }
+          if (count == 3) {
+            $(this).addClass("resizeguitar2");
+          }
+        });
+        $(".elem_4 ").click(function () {
+          count += 1;
+          if (count == 2) {
+            $(this).addClass("resizemilk");
+          }
+          if (count == 3) {
+            $(this).addClass("resizemilk2");
           }
         });
       });
