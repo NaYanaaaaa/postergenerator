@@ -195,8 +195,8 @@
     top: 44px;
   }
   .fon {
-    width: 29vw;
-    height: 21vw;
+    width: 44vw;
+    height: 32vw;
     background: url("../images/fon.svg");
     background-size: 100%;
   
@@ -631,8 +631,8 @@
   .btnex {
     position: relative;
     display: inline-block;
-    width: 3vw;
-    height: 3vw;
+    width: 6vw;
+    height: 6vw;
     margin: 20px;
     color: white;
     border-radius: 100%;
@@ -643,7 +643,7 @@
   }
   .fon_container {
     display: flex;
-    width: 24vw;
+    width: 40vw;
     height: 6vw;
     flex-wrap: wrap;
     justify-content: flex-start;
