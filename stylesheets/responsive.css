@@ -634,7 +634,6 @@
     width: 6vw;
     height: 6vw;
     margin: 20px;
-    color: white;
     border-radius: 100%;
     transition: transform .5s;
   }
